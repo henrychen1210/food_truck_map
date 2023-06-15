@@ -1,13 +1,151 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: black;
+  font-family: Helvetica;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.map-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.marker {
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header-wrap {
+  position: absolute;
+  top: 25px;
+  display: flex;
+  z-index: 1000;
+  align-items: stretch;
+  justify-content: start;
+  left: 30px;
+  height: 90%;
+}
+
+header {
+  background: black;
+  color: white;
+  padding: 1em;
+  font-family: Helvetica;
+  font-size: 90%;
+  color: white;
+  box-shadow: 2px 2px 3px black;
+  border-radius: 10px;
+  width: 500px;
+}
+
+header h1 {
+  font-size: 150%;
+  margin-bottom: 0.4em;
+  font-weight: bold;
+  color: white;
+}
+
+@media only screen and (max-width: 480px) {
+  .header-wrap {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+  }
+  header {
+    font-size: 85%;
+  }
+}
+
+div.lines {
+  display: flex;
+  flex-flow: row;
+  margin-top: 0.8em;
+  flex-wrap: wrap;
+}
+
+div.lines.hidden{
+  display: none;
+  flex-flow: row;
+  margin-top: 0.8em;
+  flex-wrap: wrap;
+}
+
+div.stopDetail {
+  display: flex;
+  flex-flow: row;
+  margin-top: 0.8em;
+  flex-wrap: wrap;
+}
+
+.stopDetail span,
+.stopDetail p {
+  margin: 0;
+  margin-left: 5px;
+  font-style: bold;
+}
+
+span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  font-size: 85%;
+  padding: 0.2em;
+  color: white;
+}
+
+span:last-child {
+  margin-right: 0;
+}
+
+span.A {
+  background: #0039A6;
+}
+
+span.B {
+  background: #FF6319;
+}
+
+span.G {
+  background: #6CBE45;
+}
+
+span.J {
+  background: #996633;
+}
+
+span.L {
+  background: #A7A9AC;
+}
+
+span.N {
+  background: #FCCC0A;
+  color: black;
+}
+
+span.S {
+  background: #808183;
+}
+
+span.one {
+  background: #EE352E;
+}
+
+span.four {
+  background: #00933C;
+}
+
+span.seven {
+  background: #B933AD;
+}
+
+.stopDetail {
+  font-size: 130%;
 }
