@@ -215,6 +215,7 @@ function Home({ isAuth }) {
           }
         });
         
+
         map.current.addLayer({
           id: "stations-label",
           source: "stations",

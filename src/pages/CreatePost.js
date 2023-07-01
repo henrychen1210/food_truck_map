@@ -471,16 +471,16 @@ function CreatePost({ isAuth }) {
                       setLine(event.target.value);
                     }}
                     >
-              <option value="ACE">A, C, E</option>
-              <option value="BDFM">B, D, F, M</option>
+              <option value="A">A, C, E</option>
+              <option value="B">B, D, F, M</option>
               <option value="G">G</option>
-              <option value="JZ">J, Z</option>
+              <option value="J">J, Z</option>
               <option value="L">L</option>
-              <option value="NQWR">N, Q, W, R</option>
+              <option value="N">N, Q, W, R</option>
               <option value="S">S</option>
-              <option value="123">1, 2, 3</option>
-              <option value="456">4, 5, 6</option>
-              <option value="7">7</option>
+              <option value="one">1, 2, 3</option>
+              <option value="four">4, 5, 6</option>
+              <option value="seven">7</option>
             </select>
           </form>
         </div>
