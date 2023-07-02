@@ -1,4 +1,4 @@
-import { getDocs, collection, deleteDoc, doc, get, update } from "firebase/firestore";
+import { getDocs, collection, deleteDoc, doc, get, update, query, where } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import { useNavigate, createSearchParams } from "react-router-dom";
 
@@ -8,7 +8,6 @@ import '../App.css';
 
 let lineData = require('../json/Subway_Lines.json');
 let stops = require('../json/Subway_Stations.json');
-
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWFtaGVucnljaGVuIiwiYSI6ImNsaXAydmZ3NzBrcnIzY256c3h6Y295ZHQifQ.a3KtDSOe2Qplv086h6Nm3Q';
 
@@ -68,7 +67,7 @@ function Home({ isAuth }) {
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
     await deleteDoc(postDoc);
-    getPosts();
+    getPosts("");
   };
   
   const editPost = async (id) => {
@@ -82,10 +81,16 @@ function Home({ isAuth }) {
     });
   };
   
-  const getPosts = async () => {
-    const data = await getDocs(postsCollectionRef);
-    //console.log(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  const getPosts = async (station) => {
+    console.log(station.toString())
+    if(station == ""){
+      const data = await getDocs(postsCollectionRef);
+      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    }
+    else{
+      const data = await getDocs(query(postsCollectionRef, where("station", "==", station.toString())));
+      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    }
   };
 
   useEffect(() => {
@@ -165,6 +170,7 @@ function Home({ isAuth }) {
                     .addEventListener("click", () => {
                       setstopdetailContent(`${div_line.outerHTML}`);
                       setIsHidden(!isHidden);
+                      getPosts(feature.properties.name);
                     });
       }
       
@@ -239,7 +245,7 @@ function Home({ isAuth }) {
         });
       });
     }
-    getPosts();
+    getPosts("");
   });
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -293,9 +299,8 @@ function Home({ isAuth }) {
                     <div className="post" key={post.id}>
                       <div className="postHeader">
                         <div className="title">
-                        
-                          <h1> {post.title} </h1>
-
+                          <h1> {post.title}  |  {post.station}</h1>
+                          
                         </div>
                         <div className="editPost">
                           {isAuth && post.author.id === auth.currentUser.uid && (
@@ -319,10 +324,6 @@ function Home({ isAuth }) {
                             </button>
                           )}
                         </div>
-                      </div>
-                      
-                      <div className="postLineContainer"> 
-                        {post.station}
                       </div>
 
                       <div className="postTextContainer"> {post.postText} </div>

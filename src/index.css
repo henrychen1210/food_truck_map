@@ -106,22 +106,40 @@ nav button:hover {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
+  font-size: 15px;
 }
 
-.inputGp input,
+.inputGp input {
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  height: 30px;
+}
+
 .inputGp textarea {
   font-size: 18px;
   border: none;
   border-radius: 5px;
   padding: 5px;
-}
-
-.inputGp input {
-  height: 40px;
-}
-.inputGp textarea {
+  font-family: Helvetica;
   height: 150px;
 }
+
+
+
+.inputGp select {
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.cpContainer label {
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
 
 .cpContainer button {
   margin-top: 20px;
@@ -130,6 +148,39 @@ nav button:hover {
   border-radius: 10px;
   cursor: pointer;
   font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.cpContainer button:hover {
+  transform: scale(1.1); 
+}
+
+.customButton {
+  margin-top: 15px;
+  display: inline-block;
+  background-color:white;
+  color: black;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.3s ease;
+
+}
+
+.customButton span {
+  font-size: 18px;
+  color: black;
+  white-space: nowrap;
+}
+
+.customButton:hover {
+  transform: scale(1.1); 
+}
+
+.uploadImage input {
+  display: none;
 }
 
 input,
@@ -286,11 +337,33 @@ header {
 }
 
 header h1 {
-  font-size: 150%;
+  font-size: 20px;
   margin-bottom: 0.4em;
   font-weight: bold;
   color: white;
 }
+
+header h3 {
+  font-size: 16px;
+  margin-bottom: 0.4em;
+  font-weight: normal;
+  color: white;
+}
+
+.title {
+  font-size: 16px;
+  align-self: right;
+  margin-bottom: 0.4em;
+  font-weight: bold;
+  color: white;
+}
+
+.postTextContainer {
+  font-size: 17px;
+  margin-bottom: 0.4em;
+  color: white;
+}
+
 
 @media only screen and (max-width: 480px) {
   .header-wrap {
