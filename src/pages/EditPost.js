@@ -34,36 +34,37 @@ function EditPost({ isAuth }) {
 
   stops.features.map(
     stop => {
-      if(stop.properties.line?.includes('A') || stop.properties.line?.includes('C') || stop.properties.line?.includes('E') && !stations_ace.includes(stop.properties.name)){
+      if((stop.properties.line?.includes('A') || stop.properties.line?.includes('C') || stop.properties.line?.includes('E')) && !stations_ace.includes(stop.properties.name)){
         stations_ace.push(stop.properties.name);
       }
-      else if(stop.properties.line?.includes('B') || stop.properties.line?.includes('D') || stop.properties.line?.includes('F') || stop.properties.line?.includes('M') && !stations_bdfm.includes(stop.properties.name)){
+      else if((stop.properties.line?.includes('B') || stop.properties.line?.includes('D') || stop.properties.line?.includes('F') || stop.properties.line?.includes('M')) && !stations_bdfm.includes(stop.properties.name)){
         stations_bdfm.push(stop.properties.name);
       }
       else if(stop.properties.line?.includes('G') && !stations_g.includes(stop.properties.name)){
         stations_g.push(stop.properties.name);
       }
-      else if(stop.properties.line?.includes('J') || stop.properties.line?.includes('Z') && !stations_jz.includes(stop.properties.name)){
+      else if((stop.properties.line?.includes('J') || stop.properties.line?.includes('Z')) && !stations_jz.includes(stop.properties.name)){
         stations_jz.push(stop.properties.name);
       }
       else if(stop.properties.line?.includes('L') && !stations_l.includes(stop.properties.name)){
         stations_l.push(stop.properties.name);
       }
-      else if(stop.properties.line?.includes('N') || stop.properties.line?.includes('Q') || stop.properties.line?.includes('W') || stop.properties.line?.includes('R') && !stations_nqwr.includes(stop.properties.name)){
+      else if((stop.properties.line?.includes('N') || stop.properties.line?.includes('Q') || stop.properties.line?.includes('W') || stop.properties.line?.includes('R')) && !stations_nqwr.includes(stop.properties.name)){
         stations_nqwr.push(stop.properties.name);
       }
       else if(stop.properties.line?.includes('S') && !stations_s.includes(stop.properties.name)){
         stations_s.push(stop.properties.name);
       }
-      else if(stop.properties.line?.includes('1') || stop.properties.line?.includes('2') || stop.properties.line?.includes('3') && !stations_123.includes(stop.properties.name)){
+      else if((stop.properties.line?.includes('1') || stop.properties.line?.includes('2') || stop.properties.line?.includes('3')) && !stations_123.includes(stop.properties.name)){
         stations_123.push(stop.properties.name);
       }
-      else if(stop.properties.line?.includes('4') || stop.properties.line?.includes('5') || stop.properties.line?.includes('6') && !stations_456.includes(stop.properties.name)){
+      else if((stop.properties.line?.includes('4') || stop.properties.line?.includes('5') || stop.properties.line?.includes('6')) && !stations_456.includes(stop.properties.name)){
         stations_456.push(stop.properties.name);
       }
       else if(stop.properties.line?.includes('7') && !stations_7.includes(stop.properties.name)){
         stations_7.push(stop.properties.name);
       }
+      return null;
     }
   );
 
@@ -166,7 +167,7 @@ function EditPost({ isAuth }) {
       .finally(() => {
         setLoading(false); // Set loading to false when the data is fetched
       });
-  }, []);
+  }, [isAuth, navigate]);
 
   if (loading) {
     return <div>Loading...</div>; // Render a loading indicator while fetching the data
@@ -379,7 +380,7 @@ function EditPost({ isAuth }) {
             <div className="deletePost">
               <img
               src={image}
-              alt="Image"
+              alt=""
               className="postImage"
               onClick={() => handleImageClick(image)}
               key={image}
@@ -389,7 +390,7 @@ function EditPost({ isAuth }) {
                   deleteImage(imagesURL.indexOf(image));
                 }}
               >
-                <img src="./trash.png" alt="Image" />
+                <img src="./trash.png" alt="" />
               </button>
             </div>
             

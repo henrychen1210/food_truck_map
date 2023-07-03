@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import './App.css';
 
@@ -9,10 +9,6 @@ import EditPost from "./pages/EditPost";
 import Login from "./pages/Login";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
-
-let lineData = require('./json/Subway_Lines.json');
-let stops = require('./json/Subway_Stations.json');
-
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWFtaGVucnljaGVuIiwiYSI6ImNsaXAydmZ3NzBrcnIzY256c3h6Y295ZHQifQ.a3KtDSOe2Qplv086h6Nm3Q';
 
@@ -33,7 +29,7 @@ export default function App() {
     <Router>
       
       <nav>
-        <img src="./hamburger.png" alt="Image" />
+        <img src="./hamburger.png" alt="" />
         <Link to="/">  Home  </Link>
 
         {!isAuth ? (

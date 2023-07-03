@@ -1,8 +1,8 @@
-import { getDocs, collection, deleteDoc, doc, get, update, query, where } from "firebase/firestore";
+import { getDocs, collection, deleteDoc, doc, query, where } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import { useNavigate, createSearchParams } from "react-router-dom";
 
-import React, { useRef, useEffect, useState, useCallback } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import '../App.css';
 
@@ -17,16 +17,12 @@ function Home({ isAuth }) {
 
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-74.02);
-  const [lat, setLat] = useState(40.74);
-  const [zoom, setZoom] = useState(12.3);
+  const [lng] = useState(-74.02);
+  const [lat] = useState(40.74);
+  const [zoom] = useState(12.3);
   const [stopdetailContent, setstopdetailContent] = useState(null);
   const [isHidden, setIsHidden] = useState(false);
   const navigate = useNavigate();
-
-  const divLineStyle = {
-    display: isHidden ? 'none' : 'block',
-  };
 
   //http://web.mta.info/developers/resources/line_colors.html
   const colorMap = {
@@ -83,7 +79,7 @@ function Home({ isAuth }) {
   
   const getPosts = async (station) => {
     console.log(station.toString())
-    if(station == ""){
+    if(station === ""){
       const data = await getDocs(postsCollectionRef);
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     }
@@ -116,7 +112,6 @@ function Home({ isAuth }) {
         // create a HTML element for each feature
         const el = document.createElement('div');
         el.className = 'marker';
-        let line_html = "";
         const line_className = {
           "A": "A",
           "C": "A",
@@ -309,7 +304,7 @@ function Home({ isAuth }) {
                                 editPost(post.id);
                               }}
                             >
-                              <img src="./edit.png" alt="Image" />
+                              <img src="./edit.png" alt="" />
                             </button>
                           )}
                         </div>
@@ -320,7 +315,7 @@ function Home({ isAuth }) {
                                 deletePost(post.id);
                               }}
                             >
-                              <img src="./trash.png" alt="Image" />
+                              <img src="./trash.png" alt="" />
                             </button>
                           )}
                         </div>
@@ -332,7 +327,7 @@ function Home({ isAuth }) {
                         {post.imagesURL.map((image) => (
                           <img
                             src={image}
-                            alt="Image"
+                            alt=""
                             className="postImage"
                             onClick={() => handleImageClick(image)}
                             key={image}
@@ -351,7 +346,7 @@ function Home({ isAuth }) {
       {selectedImage && (
         <div className="modal" onClick={handleCloseModal}>
           <div className="modal-content">
-            <img src={selectedImage} alt="Image" className="modal-image" />
+            <img src={selectedImage} alt="" className="modal-image" />
           </div>
         </div>
       )}
