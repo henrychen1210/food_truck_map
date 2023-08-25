@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# New York City Food Trucks Map
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Website Link: [http://food-truck-map.s3-website.us-east-2.amazonaws.com](http://food-truck-map.s3-website.us-east-2.amazonaws.com/)
 
-## Available Scripts
+[]()
 
-In the project directory, you can run:
+## Description:
 
-### `npm start`
+Explore NYC Food Trucks is a web application designed to help users discover and share information about food trucks located around different subway stations in New York City. The platform allows users to view existing posts about food trucks, search for trucks near specific subway stations, and contribute their own posts after logging in.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Key Features:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- User Registration and Authentication: Users can create accounts or log in using their google accounts. Secure authentication process to protect user data.
+- Subway Station Selection: Users can select a subway station from a list or map to view food truck posts related to that station.
+- View Food Truck Posts: Upon selecting a subway station, users can see posts about food trucks near that station. Each post contains information about the food truck's name, reviews, and photos.
+- Search Functionality: Users can search for specific food trucks or cuisine types across all subway stations.
+- User-Generated Posts: Logged-in users can create and submit posts about food trucks they've encountered. They can provide details such as the truck's location, pictures, and personal reviews.
+- Interactive Map: Integration of a map to visualize the locations of different food trucks around subway stations.
 
-### `npm test`
+## Technology Stack:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Frontend: HTML, CSS, JavaScript, React
+- Backend: Node.js
+- Database: Firebase
+- Image Storage: Firebase
+- User Authentication: Firebase
+- Maps Integration: Mapbox API
+- Hosting: AWS
