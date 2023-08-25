@@ -2,13 +2,13 @@
 
 Website Link: [http://food-truck-map.s3-website.us-east-2.amazonaws.com](http://food-truck-map.s3-website.us-east-2.amazonaws.com/)
 
-
+&nbsp;
 
 <p align="center">
   <img src="https://github.com/henrychen1210/food_truck_map/blob/main/image/home.png"  width="600" height="300">
 </p>
 
-
+&nbsp;
 
 
 ## Description:
