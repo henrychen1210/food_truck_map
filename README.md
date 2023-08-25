@@ -5,7 +5,7 @@ Website Link: [http://food-truck-map.s3-website.us-east-2.amazonaws.com](http://
 &nbsp;
 
 <p align="center">
-  <img src="https://github.com/henrychen1210/food_truck_map/blob/main/image/home.png"  width="600" height="300">
+  <img src="https://github.com/henrychen1210/food_truck_map/blob/main/image/home.png"  width="800" height="500">
 </p>
 
 &nbsp;
